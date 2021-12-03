@@ -23,6 +23,8 @@
                                     <th scope="col">Image</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Image</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Image</th>
                                     <th scope="col">Created At</th>
                                     <th scope="col">Action</th>
 
@@ -39,13 +41,60 @@
                                         <td>{{ $pray->lati }}</td>
                                         <td>{{ $pray->longi }}</td>
                                         <td class="text-center">
-                                        <img src="{{ Storage::url($pray->gambar1)}}" class="rounded" style="height: 100px" width="150px">
+                                            <div class="dropdown">
+                                                <img src="{{ Storage::url($pray->gambar1)}}" class="rounded"
+                                                    style="height: 100px" width="150px">
+                                                <div class="dropdown-content">
+                                                    <img src="{{ Storage::url($pray->gambar1)}}" class="rounded"
+                                                        style="height: 200px" width="350px">
+
+                                                </div>
+                                            </div>
+
                                         </td>
                                         <td class="text-center">
-                                        <img src="{{ Storage::url($pray->gambar2)}}" class="rounded" style="height: 100px" width="150px">
+                                            <div class="dropdown">
+                                                <img src="{{ Storage::url($pray->gambar2)}}" class="rounded"
+                                                    style="height: 100px" width="150px">
+                                                <div class="dropdown-content">
+                                                    <img src="{{ Storage::url($pray->gambar2)}}" class="rounded"
+                                                        style="height: 200px" width="350px">
+
+                                                </div>
+                                            </div>
                                         </td>
                                         <td class="text-center">
-                                        <img src="{{ Storage::url($pray->gambar3)}}" class="rounded" style="height: 100px" width="150px">
+                                            <div class="dropdown">
+                                                <img src="{{ Storage::url($pray->gambar3)}}" class="rounded"
+                                                    style="height: 100px" width="150px">
+                                                <div class="dropdown-content">
+                                                    <img src="{{ Storage::url($pray->gambar3)}}" class="rounded"
+                                                        style="height: 200px" width="350px">
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="dropdown">
+                                                <img src="{{ Storage::url($pray->gambar4)}}" class="rounded"
+                                                    style="height: 100px" width="150px">
+                                                <div class="dropdown-content">
+                                                    <img src="{{ Storage::url($pray->gambar4)}}" class="rounded"
+                                                        style="height: 200px" width="350px">
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="dropdown">
+                                                <img src="{{ Storage::url($pray->gambar5)}}" class="rounded"
+                                                    style="height: 100px" width="150px">
+                                                <div class="dropdown-content">
+                                                    <img src="{{ Storage::url($pray->gambar5)}}" class="rounded"
+                                                        style="height: 200px" width="350px">
+
+                                                </div>
+                                            </div>
                                         </td>
                                         <td>{{substr("$pray->created_at",0,10)}}</td>
                                         <td>
@@ -129,6 +178,16 @@
                         <div class="form-group">
                                 <label class="font-weight-bold">GAMBAR3</label>
                                 <input type="file" class="form-control" id="gambar3" name="gambar3">
+                            
+                        </div>
+                        <div class="form-group">
+                                <label class="font-weight-bold">GAMBAR4</label>
+                                <input type="file" class="form-control" id="gambar4" name="gambar4">
+                            
+                        </div>
+                        <div class="form-group">
+                                <label class="font-weight-bold">GAMBAR5</label>
+                                <input type="file" class="form-control" id="gambar5" name="gambar5">
                             
                         </div>
 

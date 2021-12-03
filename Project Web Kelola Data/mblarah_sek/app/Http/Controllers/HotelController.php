@@ -29,6 +29,17 @@ public function show()
    
         return view('main/hotel',$data);
     }
+
+    public function detail(Request $request, $id)
+
+    {
+        
+        $where = array('id' => $id);
+        $hotel  = Hotel::where($where)->first();
+        
+    return view('detail/detail_hotel', compact('hotel'));
+
+    }
 public function store(Request $request)
     {
         try {
@@ -76,6 +87,30 @@ public function store(Request $request)
                 );
     
                 $create->gambar3 = $path;
+            }
+
+            if ($request->hasFile('gambar4')) {
+                $gambar4 = '04-'.time().'.'.$request->gambar4->getClientOriginalExtension();
+    
+                $path = Storage::putFileAs(
+                    'public/hotel',
+                    $request->file('gambar4'),
+                    $gambar4
+                );
+    
+                $create->gambar4 = $path;
+            }
+
+            if ($request->hasFile('gambar5')) {
+                $gambar5 = '05-'.time().'.'.$request->gambar5->getClientOriginalExtension();
+    
+                $path = Storage::putFileAs(
+                    'public/hotel',
+                    $request->file('gambar5'),
+                    $gambar5
+                );
+    
+                $create->gambar5 = $path;
             }
     
             $create->save();

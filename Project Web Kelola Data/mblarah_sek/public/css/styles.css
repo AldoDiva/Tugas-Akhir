@@ -26,12 +26,13 @@
   --gray-dark: #5a5c69;
   --primary: #4e73df;
   --secondary: rgb(240, 230, 140);
-  --success: #1cc88a;
+  --success: #00FA9A;
   --info: #36b9cc;
   --warning: #f6c23e;
   --danger: #e74a3b;
   --light: #f8f9fc;
   --dark: #5a5c69;
+  --user: #00FA9A;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -67,8 +68,36 @@ body {
   background-color: #fff;
 }
 
-
-
+.bg-user {
+  background-color: #00FA9A !important;
+}
+.bg-hotel {
+  background-color: #9932CC !important;
+}
+.bg-situs {
+  background-color: #FF4500 !important;
+}
+.bg-pray {
+  background-color: #f6c23e !important;
+}
+.bg-kuliner {
+  background-color: #48D1CC !important;
+}
+.border-left-user {
+  border-left: 0.5rem solid #00FA9A !important;
+}
+.border-left-hotel {
+  border-left: 0.5rem solid #9932CC !important;
+}
+.border-left-situs {
+  border-left: 0.5rem solid #FF4500 !important;
+}
+.border-left-pray {
+  border-left: 0.5rem solid #f6c23e !important;
+}
+.border-left-kuliner {
+  border-left: 0.5rem solid #48D1CC !important;
+}
 
 body {
   margin: 0;
@@ -1776,12 +1805,12 @@ pre code {
     max-width: 8.33333%;
   }
   .col-xl-2 {
-    flex: 0 0 16.66667%;
-    max-width: 16.66667%;
+    flex: 0 0 20%;
+    max-width: 17%;
   }
   .col-xl-3 {
-    flex: 0 0 25%;
-    max-width: 25%;
+    flex: 0 0 20%;
+    max-width: 18%;
   }
   .col-xl-4 {
     flex: 0 0 33.33333%;
@@ -4565,7 +4594,7 @@ input[type="button"].btn-block {
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
-  padding: 1.25rem;
+  padding: 1rem;
 }
 
 .card-title {
@@ -6207,7 +6236,7 @@ a.close.disabled {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 15%;
+  width: 20%;
   color: #fff;
   text-align: center;
   opacity: 0.5;
@@ -7779,7 +7808,7 @@ button.bg-dark:focus {
 
 .ml-6,
 .mx-6{
-  margin-left: 7rem !important;
+  margin-left: 5rem !important;
 }
 .p-0 {
   padding: 0 !important;
@@ -14511,7 +14540,7 @@ input[type=button].btn-block {
   background-color: #fff;
   background-clip: border-box;
   border: 2px solid rgba(0, 0, 0, 0.250);
-  border-radius: 20px;
+  border-radius: 0px;
 }
 
 .card > hr {
@@ -16292,9 +16321,10 @@ a.close.disabled {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 35px;
+  height: 35px;
   background: no-repeat 50%/100% 100%;
+  
 }
 
 .carousel-control-prev-icon {
@@ -20231,7 +20261,7 @@ a.text-warning:focus {
 }
 
 .text-danger {
-  color: #e3342f !important;
+  color: #66CDAA !important;
 }
 
 a.text-danger:hover,

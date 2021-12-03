@@ -9,7 +9,7 @@ class Hotel extends Model
     
     use HasFactory;
     protected $fillable=[
-        'nama', 'alamat', 'keterangan','no_telp', 'lati', 'longi', 'gambar1', 'gambar2', 'gambar3'
+        'nama', 'alamat', 'keterangan','no_telp', 'lati', 'longi', 'gambar1', 'gambar2', 'gambar3','gambar4','gambar5',
     ];
 
 }

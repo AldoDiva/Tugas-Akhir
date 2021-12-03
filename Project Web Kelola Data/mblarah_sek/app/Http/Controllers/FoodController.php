@@ -16,17 +16,28 @@ class FoodController extends Controller
      */
 
 
-public function index()
+    public function index()
     {
         $data['foods'] = Food::orderBy('id','desc')->paginate(5);
    
         return view('foodplace',$data);
     }
-public function show()
+    public function show()
     {
         $data['foods'] = Food::orderBy('id','desc')->paginate(6);
    
         return view('main/kuliner',$data);
+    }
+
+    public function detail(Request $request, $id)
+
+    {
+        
+        $where = array('id' => $id);
+        $food  = Food::where($where)->first();
+        
+    return view('detail/detail_kuliner', compact('food'));
+
     }
 
    
@@ -77,6 +88,29 @@ public function show()
                 );
     
                 $create->gambar3 = $path;
+            }
+
+            if ($request->hasFile('gambar4')) {
+                $gambar4 = '04-'.time().'.'.$request->gambar4->getClientOriginalExtension();
+    
+                $path = Storage::putFileAs(
+                    'public/food',
+                    $request->file('gambar4'),
+                    $gambar4
+                );
+    
+                $create->gambar4 = $path;
+            }
+            if ($request->hasFile('gambar5')) {
+                $gambar5 = '05-'.time().'.'.$request->gambar5->getClientOriginalExtension();
+    
+                $path = Storage::putFileAs(
+                    'public/food',
+                    $request->file('gambar5'),
+                    $gambar5
+                );
+    
+                $create->gambar5 = $path;
             }
     
             $create->save();

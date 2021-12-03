@@ -87,7 +87,7 @@
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
         <li class="nav-item">
-            <a class="nav-link" href="{{('useradd')}}">
+            <a class="nav-link" href="{{('report')}}">
                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                 <span>Laporan Bug & Saran</span></a>
         </li>

@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\PrayController;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ReportController;
 
 use Illuminate\Support\Facades\Route;
 /*
@@ -23,6 +25,7 @@ Route::get('/', function () {
 })->name('login');
 
 Route::group(['middleware' => 'auth'], function() {
+
 Route::get('user-registration', [UserController::class, 'index']);
 Route::post('user-store', [UserController::class, 'userPostRegistration']);
 Route::get('dashboard',[UserController::class, 'dashboard']);
@@ -31,7 +34,12 @@ Route::get('situsadd', [SitusaddController::class, 'index'])->name('situsadd');
 Route::get('hotelplace', [HotelController::class, 'index'])->name('hotelplace');
 Route::get('prayplace', [PrayController::class, 'index'])->name('prayplace');
 Route::get('foodplace', [FoodController::class, 'index'])->name('foodplace');
+Route::get('dashboard',[DashboardController::class, 'grafik'])->name('dashboard');
+Route::get('report',[ReportController::class, 'index'])->name('report');
+
 });
+
+
 //route login
 Route::get('user-login', [UserController::class, 'userLoginIndex']);
 Route::post('login',  [UserController::class, 'userPostLogin']);
@@ -64,10 +72,15 @@ Route::post('delete-food', [FoodController::class, 'destroy']);
 
 //route main
 Route::get('/', [SitusaddController::class, 'show'])->name('/');
-Route::get('more/{id}', [SitusaddController::class, 'detail'])->name('more');
 Route::get('hotel', [HotelController::class, 'show'])->name('hotel');
 Route::get('food', [FoodController::class, 'show'])->name('food');
 Route::get('pray', [PrayController::class, 'show'])->name('prays');
+
+//route Detail
+Route::get('detail_situs/{id}', [SitusaddController::class, 'detail'])->name('detail_situs');
+Route::get('detail_hotel/{id}', [HotelController::class, 'detail'])->name('detail_hotel');
+Route::get('detail_kuliner/{id}', [FoodController::class, 'detail'])->name('detail_kuliner');
+Route::get('detail_pray/{id}', [PrayController::class, 'detail'])->name('detail_pray');
 
 //route user function
 Route::post('delete-user', [UseraddController::class, 'destroy']);

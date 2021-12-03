@@ -2,7 +2,19 @@
 
 @section('content')
 
+<style>/* Made with love by Mutiullah Samim*/
 
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-color: #708090;
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+
+}
+</style>
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
     <div class="container px-3 px-lg-2" style="text-align:right;">
@@ -70,12 +82,12 @@
 <div class="container">
     <div class="row">
         @foreach ($hotels as $hotel)
-        <div class="col-md-4 col-lg-6 col-sm-6 pl-5 pb-5 pt-2">
-            <div class="card border-0 shadow rounded-3 overflow-hidden fit-content w-100">
+        <div class="col-md-4 col-lg-6 col-sm-6 pb-5 pt-2">
+            <div class="card border-0 shadow rounded-3 overflow-hidden fit-content w-100" style="border-radius: 20px;">
                 <img src="{{ Storage::url($hotel->gambar1)}}" style="height:20rem;">
                 <h4 class="pl-4"><b>{{("$hotel->nama")}}</b></h4>
                 <p class="pl-4">{{("$hotel->alamat")}}</p>
-                <a class="nav-link" href="#"> <button class="btn btn-secondary">Detail</button></a>
+                <a class="nav-link" href="{{route('detail_hotel',$hotel->id)}}"> <button class="btn btn-secondary">Detail</button></a>
             </div>
         </div>
         @endforeach

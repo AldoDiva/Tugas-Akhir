@@ -2,7 +2,19 @@
 
 @section('content')
 
+<style>/* Made with love by Mutiullah Samim*/
 
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-color: #708090;
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+
+}
+</style>
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
     <div class="container px-3 px-lg-2" style="text-align:right;">
@@ -53,29 +65,24 @@
 
     <div id="bgLayers_comp-ja9fwivk" data-hook="bgLayers" class="_3wnIc pb-4">
         <div id="bgMedia_comp-ja9fwivk" class="_2GUhU">
-            <wix-video id="videoContainer_comp-ja9fwivk" class="_3hRfg bgVideo _1PtAB"><video id="comp-ja9fwivk_video"
-                    class="_3vVMz" role="presentation" crossorigin="anonymous" playsinline="" preload="auto" muted=""
-                    autoplay="" tabindex="-1" width="100%" height="100%"
-                    src="https://video.wixstatic.com/video/11062b_b109368ac4264b688d21b3e361372fb1/1080p/mp4/file.mp4"
-                    style="width: 94rem; height: 20rem; object-fit: cover; object-position: center center; opacity: 1;"></video>
-
-            </wix-video>
-
+        <video id="comp-ja9fwivk_video" class="_3vVMz" role="presentation" crossorigin="anonymous" playsinline="" preload="auto"
+    muted="" loop="" autoplay="" tabindex="-1" width="100%" height="100%"
+    src="https://video.wixstatic.com/video/f2c3ec_9102dba82e134763860a2369b8acd134/360p/mp4/file.mp4"
+    style="width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 1;"></video>
         </div>
     </div>
 </div>
-
 
 <!-- Main Content-->
 <div class="container">
     <div class="row">
         @foreach ($situses as $situs)
-        <div class="col-md-4 col-lg-6 col-sm-6 pl-5 pb-5 pt-2">
-            <div class="card border-0 shadow rounded-3 overflow-hidden fit-content w-100">
+        <div class="col-md-4 col-lg-6 col-sm-6 pb-5 pt-2">
+            <div class="card border-0 shadow rounded-3 overflow-hidden fit-content w-100" style="border-radius: 20px;">
                 <img src="{{ Storage::url($situs->gambar1)}}" style="height:20rem;">
                 <h4 class="pl-4"><b>{{("$situs->nama")}}</b></h4>
                 <p class="pl-4">{{("$situs->alamat")}}</p>
-                <a class="nav-link" href="{{route('more',$situs->id)}}"> <button class="btn btn-secondary">Detail</button></a>
+                <a class="nav-link" href="{{route('detail_situs',$situs->id)}}"> <button class="btn btn-secondary">Detail</button></a>
             </div>
         </div>
         @endforeach

@@ -137,10 +137,7 @@ margin-left: 4px;
 
         </div>
 
-        <div class="card-footer">
-
-            </form>
-        </div>
+            </form>  
     </div>
 </div>
 
